@@ -2,12 +2,12 @@
 
 Summary:	Python library for working with RDF
 Name:		python-%{module}
-Version:	3.2.0
-Release:	2
+Version:	4.1.2
+Release:	1
 License:	BSD
 Group:		Development/Languages/Python
-Source0:	http://www.rdflib.net/%{module}-%{version}.tar.gz
-# Source0-md5:	ab3d3a5f71ebb6fe4fd33539f5d5768e
+Source0:	https://github.com/RDFLib/rdflib/archive/%{version}.tar.gz
+# Source0-md5:	5c284061f1f2a086b0782644afbaac59
 URL:		http://www.rdflib.net/
 BuildRequires:	python-devel
 BuildRequires:	python-modules
@@ -43,6 +43,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGELOG README
+%doc CHANGELOG.md LICENSE README.md
+%attr(755,root,root) %{_bindir}/csv2rdf
+%attr(755,root,root) %{_bindir}/rdf2dot
+%attr(755,root,root) %{_bindir}/rdfgraphisomorphism
+%attr(755,root,root) %{_bindir}/rdfpipe
+%attr(755,root,root) %{_bindir}/rdfs2dot
 %{py_sitescriptdir}/rdflib
+%{py_sitescriptdir}/%{module}-%{version}-py*.egg-info
 
